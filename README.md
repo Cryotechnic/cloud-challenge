@@ -4,6 +4,15 @@
 - Docker version 28.3.2, build 578ccf6
 - Helm 3.18.4
 
+## Try it out!
+You can try and run this locally by doing the following:
+1. `helm repo add cloud-challenge https://cryotechnic.github.io/cloud-challenge/`
+2. `helm repo update`
+3. `helm search repo cloud-challenge`
+4. `helm install cloud-challenge/helloapp`
+
+# Local Development
+
 ## Helm Chart
 When modifying `values.yaml`, either use the `tag` or `digest` property, but not both (as it is configured to only take 1 parameter).
 
