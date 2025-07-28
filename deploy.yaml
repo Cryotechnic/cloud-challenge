@@ -1,7 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloapp
+  name: helloapp-deploy
+  labels:
+    app: helloapp
+    tier: web
+# Spec for the deployment
 spec:
   selector:
     matchLabels:
@@ -10,6 +14,7 @@ spec:
     metadata:
       labels:
         app: helloapp
+    # Spec for the pod
     spec:
       containers:
       - name: helloapp
