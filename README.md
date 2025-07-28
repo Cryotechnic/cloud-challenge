@@ -4,7 +4,7 @@
 - Docker version 28.3.2, build 578ccf6
 - Helm 3.18.4
 
-## Try it out!
+## ~~Try it out!~~ Currently broken due to missing GitHub permissions
 You can try and run this locally by doing the following:
 1. `helm repo add cloud-challenge https://cryotechnic.github.io/cloud-challenge/`
 2. `helm repo update`
