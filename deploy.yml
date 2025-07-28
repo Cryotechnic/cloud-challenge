@@ -5,7 +5,6 @@ metadata:
   labels:
     app: helloapp
     tier: web
-# Spec for the deployment
 spec:
   selector:
     matchLabels:
@@ -14,7 +13,6 @@ spec:
     metadata:
       labels:
         app: helloapp
-    # Spec for the pod
     spec:
       containers:
       - name: helloapp
@@ -28,3 +26,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloapp-service
+spec:
+  selector:
+    app: helloapp
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: NodePort

@@ -8,4 +8,8 @@ The file contains all necesssary syntax to deploy a local instance of `gcr.io/go
 
 To know what kind of `apiVersion` we should use, we can run the `kubectl api-resources` command.
 
-The remainder of the schema was auto-generated using VSCode's Kubernetes plugin, but manual creation of a valid YAML structure is also possible. Knowing which fields are required can be achieved using the `kubectl explain <resource> --recursive`. In this case, since a deployment is required, the command to run would be `kubectl explain deployments --recursive`
+The remainder of the schema was auto-generated using VSCode's Kubernetes plugin, but manual creation of a valid YAML structure is also possible. Knowing which fields are required can be achieved using the `kubectl explain <resource> --recursive`. In this case, since a deployment is required, the command to run would be `kubectl explain deployments --recursive`.
+
+To deploy, you can run: `kubectl apply -f deploy.yml`.
+
+To delete the deployment, you can run: `kubectl delete deployment helloapp-deploy && kubectl delete service helloapp-service`.
