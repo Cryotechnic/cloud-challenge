@@ -2,8 +2,20 @@
 
 # Requirements
 - Docker version 28.3.2, build 578ccf6
+- Helm 3.18.4
 
-## `deploy.yaml`
+## Helm Chart
+When modifying `values.yaml`, either use the `tag` or `digest` property, but not both (as it is configured to only take 1 parameter).
+
+If you do not want to expose external ports for the Pod, you can change the `type` property in `service` to `ClusterIP`.
+
+To deploy, simply run `helm install <name> ./helloapp`. To view Pod status, do `kubectl get all`. If you would like to uninstall, you can do so at any time using `helm uninstall <name>`.
+
+If you have already deployed this once, you can upgrade the Helm chart by running `helm upgrade <original-name> ./helloapp`.
+
+To view Pod logs, `kubectl logs deployment/helloapp`. If you'd like to view it through Helm instead, you can do `helm status <name>`.
+
+## `deploy.yaml` (Deprecated in favor of Helm chart)
 The file contains all necesssary syntax to deploy a local instance of `gcr.io/google-samples/hello-app:2.0`.
 
 To know what kind of `apiVersion` we should use, we can run the `kubectl api-resources` command.
