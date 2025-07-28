@@ -15,6 +15,9 @@ spec:
       - name: helloapp
         image: gcr.io/google-samples/hello-app@sha256:8e836aef1ec98bf41189a7b14fa94434e97244fa9106461bef02d0696da20af8
         resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
           limits:
             memory: "128Mi"
             cpu: "500m"
